@@ -71,5 +71,13 @@ $(document).ready(function () {
 	   }
 	});
 	
-
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		url: HOST+'/purchases/point/',
+		success: function(res) {
+			let data = res.point;
+			$('.healthpoints').text(data);
+		}
+	});
 });
